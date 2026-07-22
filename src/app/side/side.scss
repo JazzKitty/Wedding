@@ -1,0 +1,13 @@
+button, a{
+    background-color: transparent; 
+    border: none;
+    color: #FFFFFF;
+    padding: 10px;
+    display: flex;
+    font-size: clamp(1.5rem, 4vw + 1rem, 2rem);
+    justify-content: start;
+}
+
+button:hover, a:hover {
+    color: #AAAAAA;
+}

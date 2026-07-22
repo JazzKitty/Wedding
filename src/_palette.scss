@@ -1,0 +1,48 @@
+// 1. Define your multi-tier color map
+$palettes: (
+  "blue": (
+    "lightest": #0000CC,
+    "light": #0000AD,
+    "med": #00008A,
+    "dark": #000066,
+    "darkest": #000047
+  ),
+  "orange": (
+    "lightest": #fc710e,
+    "light": #ed6503,
+    "med": #d45a03,
+    "dark": #bb4f03,
+    "darkest": #a24502
+  ),
+  "purple": (
+    "lightest": #ce66ff,
+    "light": #be33ff,
+    "med": #ad00ff,
+    "dark": #8b00cc,
+    "darkest": #660099
+  ),
+  "green": (
+    "lightest": #005000,
+    "light": #004600,
+    "med": #003c00,
+    "dark": #003200,
+    "darkest": #002800
+  ),
+  "red": (
+    "lightest": #660000,
+    "light": #5a0000,
+    "med": #4d0000,
+    "dark": #400000,
+    "darkest": #330000
+  )
+);
+
+// 2. Automatically generate native CSS custom properties
+
+:root {
+  --aventurine: #215247;
+  --viva-magenta: #AC354B;
+  --dark-blue: #333D8A;
+  --copper-skillet: #AD572A;
+  --grape-juice: #612D5E;
+}

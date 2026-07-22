@@ -1,1 +1,128 @@
 /* You can add global styles to this file, and also import other style files */
+@use 'palette' as *;
+
+.primary-button {
+    color: var(--color-blue-light);
+    background-color: var(--color-blue-lightest);
+}
+
+.main {
+    background-color: var(--grape-juice);
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    //background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url('../public/filigree.png');
+    
+    /* Force the image to repeat both horizontally and vertically */
+    //background-repeat: repeat; 
+    
+    /* (Optional) Adjust the size of the repeating tile */
+    //background-size: 30vh 30vh; 
+    
+    /* (Optional) Control exactly where the pattern starts */
+    //background-position: top left;
+    z-index: -1;
+}
+.main::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('../public/filigree.png');
+    background-size: cover;
+    opacity: 0.1;  
+    background-repeat: repeat; 
+    background-size: 30vh 30vh; 
+    z-index: 0;
+                /* Adjust image transparency here (0.0 to 1.0) */
+}
+/* Ensure the browser window itself allows full sizing */
+html,
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Lovelace Script', sans-serif;
+    color: #FFFFFF;
+}
+
+/* Force the Angular root component to take up all available space */
+app-root {
+    display: block;
+    /* or flex / grid depending on your layout */
+    height: 100%;
+    width: 100%;
+    z-index: 2;
+}
+
+@font-face {
+    font-family: 'Lovelace Script';
+    src: url('../public/fonts/Canterbury.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    color: #FFFFFF;
+}
+
+h1 {
+    margin: 0;
+    font-size: clamp(2vw, 4vw + 1rem, 4vw + 2rem);
+    flex-wrap: balance;
+    text-align: center;
+}
+
+h2 { 
+    margin: 0;
+    font-size: clamp(5px, 2vw + 1rem, 2vw + 2rem);
+    flex-wrap: balance;
+    text-align: center;
+}
+
+.sidebar{
+    background-color: var(--aventurine) !important;
+    width: max-content !important;
+    z-index: 3;
+    position: relative;
+}
+
+button {
+    background-color: var(--dark-blue); 
+    color: white;   
+    border: 4px solid var(--dark-blue);   /* Thickness, style, color */
+    border-radius: 6px; /* Rounds the corners */
+    font-family: 'Lovelace Script', sans-serif;
+    font-size: clamp(1vw, 1vw + 1rem, 1vw + 1rem);
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+button:hover{
+    background-color: color-mix(in srgb, var(--dark-blue), black 15%);
+    border: 4px solid color-mix(in srgb, var(--dark-blue), black 15%);
+}
+
+a {
+    text-decoration: none;
+    font-size: clamp(.5vw, .5vw + 1rem, .5vw + 1rem);
+}
+
+.main-container{
+    flex-grow: 1;
+    line-height: 1.5;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0px;
+    overflow-x: hidden;   
+    z-index: 1;
+}
+
+.sub-container {
+    display: flex; flex-direction: column; align-items: center; height: 100%;
+
+}
