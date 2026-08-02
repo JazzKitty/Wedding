@@ -1,60 +1,60 @@
 <div style="height: 100%; width: 100%; display: flex; flex-direction: column;">
     <button (click)="onExpanded()">
-        <div style="display: flex; align-items: baseline;">
+        <h2 style="display: flex; align-items: baseline;">
             <fa-icon class="fa-x" [icon]="faHamburger"></fa-icon>
-        </div>
+        </h2>
     </button>
-    <a routerLink="home">
-        <div style="display: flex; align-items: baseline;">
+    <a routerLink="home" class="text-decoration-none">
+        <h2 style="display: flex; align-items: baseline;">
             <fa-icon class="fa-x" [icon]="faHome"></fa-icon>
             @if (expanded) {
             <span>
                 Home
             </span>
             }
-        </div>
+        </h2>
 
     </a>
-    <a routerLink="rsvp">
-        <div style="display: flex; align-items: baseline;">
+    <a routerLink="rsvp" class="text-decoration-none">
+        <h2 style="display: flex; align-items: baseline;">
             <fa-icon class="fa-x" [icon]="faEnvelope"></fa-icon>
             @if (expanded) {
             <span>
                 RSVP
             </span>
             }
-        </div>
+        </h2>
     </a>
-    <a routerLink="photo">
-        <div style="display: flex; align-items: baseline;">
+    <a routerLink="photo" class="text-decoration-none">
+        <h2 style="display: flex; align-items: baseline;">
             <fa-icon class="fa-x" [icon]="faImage"></fa-icon>
             @if (expanded) {
             <span>
                 Photos
             </span>
             }
-        </div>
+        </h2>
 
     </a>
-    <a routerLink="registry">
-        <div style="display: flex; align-items: baseline;">
+    <a routerLink="registry" class="text-decoration-none">
+        <h2 style="display: flex; align-items: baseline;">
             <fa-icon class="fa-x" [icon]="faGift"></fa-icon>
             @if (expanded) {
             <span >
                 Registry
             </span>
             }
-        </div>
+        </h2>
 
     </a>
-    <a routerLink="faq" style="margin-top: auto;">
-        <div style="display: flex; align-items: baseline;">
+    <a routerLink="faq" style="margin-top: auto;" class="text-decoration-none">
+        <h2 style="display: flex; align-items: baseline;">
             <fa-icon class="fa-x" [icon]="faQuestion"></fa-icon>
             @if (expanded) {
             <span>
                 FAQ
             </span>
             }
-        </div>
+        </h2>
     </a>
 </div>

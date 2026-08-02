@@ -1,5 +1,86 @@
 <div class="sub-container">
+    <img src="/banner.jpeg" alt="Description of photo" style="height: 50vh;">
+    <div class="bottom-container">
+        @if (this.parties.length > 0 && this.guests.length == 0) {
+            <div class="form-check" style="display: flex; justify-content: center; align-items: center; gap: 5px;">
+                @for (party of parties; track $index;) {
+                    <input [(ngModel)]="idParty" [value]="party.idParty" style="transform: translateY(-0.1rem);" class="form-check-input" type="radio" [id]="'party'+ '_' + $index" >
+                    <label [for]="'party' + '_' + $index">{{party.names}}</label>
+                }
+            </div>
+            <div style="display: flex; gap: 5px;">
+                <button (click)="onSearchAgain()" appRipple class="btn btn-primary" style="display: flex; justify-content: center;">
+                    <span>
+                        Search Again
+                    </span>
+                </button>
+                <button (click)="onConfirm()" appRipple class="btn btn-primary" [disabled]="isNaN(idParty)"
+                    style="display: flex; justify-content: center;">
+                    <span>
+                        Confirm Selection
+                    </span>
+                </button>
+            </div>  
+        }@else if (this.guests.length > 0) {
+            <div style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap; overflow: scroll;">
 
-    <h2>Find Your Invite</h2>
-    <input>
+                @for (guest of guests; track $index;) {
+ 
+                    <div class="card" style="min-width: 18rem; width: min-content; border: 2px solid gray; border-radius: 10px;">
+                        <svg style="position: absolute;" height="100%" width="100%">
+                            <line x1="0" y1="0" x2="50%" y2="50%" style="stroke:gray;stroke-width:2" />
+                            <line x1="50%" y1="50%" x2="100%" y2="0" style="stroke:gray;stroke-width:2" />
+                        </svg>
+                        <div style="z-index: 5;" class="card-body">
+                            <h4 class="card-title">{{guest.name}}</h4>
+
+                            <div style="display: flex; align-items: center;">
+                                <h5 style="margin: 0;" >Attending?</h5>
+                                <input style="margin-top: 0; aspect-ratio: 1 / 1; width: unset;" [(ngModel)]="guest.attending" class="form-check-input" type="checkbox" [id]="'attending' + '_' + guest.idGuest" value=true>
+                            </div> 
+                            @if(guest.attending){
+                                <!-- <div style="display: flex; align-items: center;">  -->
+                                    <h5>Allergies/ Food Restrictions?</h5>
+                                    <input style="font-size: 1.25rem !important; background-color: var(--copper-skillet) !important;" [(ngModel)]="guest.allergy" class="form-control" [id]="'allergies' + '_' + guest.idGuest">
+                                <!-- </div> -->
+                            }
+
+                        </div>
+                    </div>
+
+
+                }  
+            </div>
+            <button (click)="onSave()" appRipple class="btn btn-primary"
+                style="display: flex; justify-content: center;">
+                <span>
+                    Save
+                </span>
+            </button>
+ 
+        }@else {
+            <h3 style="display: just;">
+                <div>
+                    Find Your Invite
+                </div>
+                <div class="input-group" style="gap: 3px;">
+                    <input placeholder="Full Name" class="form-control" [ngClass]="isValid ? '' : 'is-invalid'"
+                    (keydown.enter)="onSearch()"
+                        style="text-align: center; font-size: inherit;" [(ngModel)]="fullName">
+
+                    <button appRipple (click)="onSearch()" class="btn btn-primary"
+                            style="display: flex; justify-content: center; font-size: inherit;">
+                            Search
+                        <fa-icon class="fa-x" [icon]="faMagGlass"></fa-icon>
+                    </button>
+     
+                </div>
+                @if(!isValid){
+                    <div class="invalid-feedback" style="display: unset !important;">
+                        {{feedbackMessage}}
+                    </div>
+                }
+            </h3>
+        }
+    </div>
 </div>

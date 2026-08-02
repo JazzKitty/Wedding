@@ -1,5 +1,5 @@
 export const environment = {
-    production: true,
+    production: false,
     googleApiKey: "AIzaSyCTQamLbmK1qeNdm1jowg-ZBksVY-1EkI8",
-    apiUrl: "api.pearsonstauffer.wedding"
-}
+    apiUrl: "http://localhost:8080/"
+};

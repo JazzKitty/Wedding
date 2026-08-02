@@ -1,26 +1,23 @@
 <div class="sub-container">
-          <img src="/banner.jpeg" alt="Description of photo" style="height: 50vh;">
+    <img src="/banner.jpeg" alt="Description of photo" style="height: 50vh;">
 
-    <div style="display: flex; flex-direction: column; align-items: center;">
-
+    <div class="bottom-container">
         <h1>Sierra Rose & Patrick Joseph</h1>
         <h1>Pearson Stauffer</h1>
-        <h2>May 21st, 2027 | Salt Lake City, UT | Louland Falls</h2> 
+        <h2>May 21st, 2027 | Salt Lake City, UT | Louland Falls</h2>
         <div style="display: flex; gap: 5px; flex-wrap: wrap; justify-content: center;">
-          <button routerLink="/rsvp" style="display: flex;   justify-content: center; ">
-            <fa-icon class="fa-x" [icon]="faEnvelope"></fa-icon>
-
-            <span style="margin-top: 5px; margin-bottom: 5px; margin-right: 20px;">
-              RSVP
-            </span>
-          </button>
-          <button (click)="openDirections()" style="display: flex; justify-content: center; ">
-            <fa-icon class="fa-x" [icon]="faTurnRight"></fa-icon>
-
-            <span style="margin-top: 5px; margin-bottom: 5px; margin-right: 20px;">
-              Get Directions
-            </span>
-          </button>
+            <button class="btn btn-primary" routerLink="/rsvp" style="display: flex;   justify-content: center; ">
+                <fa-icon class="fa-x" [icon]="faEnvelope"></fa-icon>
+                <span>
+                    RSVP
+                </span>
+            </button>
+            <button class="btn btn-primary" (click)="openDirections()" style="display: flex; justify-content: center; ">
+                <fa-icon class="fa-x" [icon]="faTurnRight"></fa-icon>
+                <span>
+                    Get Directions
+                </span>
+            </button>
         </div>
     </div>
 </div>

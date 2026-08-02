@@ -2,127 +2,220 @@
 @use 'palette' as *;
 
 .primary-button {
-    color: var(--color-blue-light);
-    background-color: var(--color-blue-lightest);
+  color: var(--color-blue-light);
+  background-color: var(--color-blue-lightest);
 }
 
 .main {
-    background-color: var(--grape-juice);
-    padding: 0;
-    margin: 0;
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    //background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url('../public/filigree.png');
-    
-    /* Force the image to repeat both horizontally and vertically */
-    //background-repeat: repeat; 
-    
-    /* (Optional) Adjust the size of the repeating tile */
-    //background-size: 30vh 30vh; 
-    
-    /* (Optional) Control exactly where the pattern starts */
-    //background-position: top left;
-    z-index: -1;
+  background-color: var(--grape-juice);
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  //background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url('../public/filigree.png');
+
+  /* Force the image to repeat both horizontally and vertically */
+  //background-repeat: repeat;
+
+  /* (Optional) Adjust the size of the repeating tile */
+  //background-size: 30vh 30vh;
+
+  /* (Optional) Control exactly where the pattern starts */
+  //background-position: top left;
+  z-index: -1;
 }
 .main::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: url('../public/filigree.png');
-    background-size: cover;
-    opacity: 0.1;  
-    background-repeat: repeat; 
-    background-size: 30vh 30vh; 
-    z-index: 0;
-                /* Adjust image transparency here (0.0 to 1.0) */
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('../public/filigree.png');
+  background-size: cover;
+  opacity: 0.1;
+  background-repeat: repeat;
+  background-size: 30vh 30vh;
+  z-index: 0;
+  /* Adjust image transparency here (0.0 to 1.0) */
 }
 /* Ensure the browser window itself allows full sizing */
 html,
 body {
-    height: 100%;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    font-family: 'Lovelace Script', sans-serif;
-    color: #FFFFFF;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Lovelace Script', sans-serif;
+  color: #ffffff;
+  --bs-body-font-family: 'Lovelace Script', sans-serif;
+  --bs-body-color: #ffffff; /* Changes global body text */
 }
 
 /* Force the Angular root component to take up all available space */
 app-root {
-    display: block;
-    /* or flex / grid depending on your layout */
-    height: 100%;
-    width: 100%;
-    z-index: 2;
+  display: block;
+  /* or flex / grid depending on your layout */
+  height: 100%;
+  width: 100%;
+  z-index: 2;
 }
 
 @font-face {
-    font-family: 'Lovelace Script';
-    src: url('../public/fonts/Canterbury.ttf') format('truetype');
-    font-weight: 500;
-    font-style: normal;
-    color: #FFFFFF;
+  font-family: 'Lovelace Script';
+  src: url('../public/fonts/Canterbury.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  color: #ffffff;
 }
 
 h1 {
-    margin: 0;
-    font-size: clamp(2vw, 4vw + 1rem, 4vw + 2rem);
-    flex-wrap: balance;
-    text-align: center;
+  margin: 0;
+  //font-size: clamp(2vw, 4vw + 1rem, 4vw + 2rem);
+  flex-wrap: balance;
+  text-align: center;
 }
 
-h2 { 
-    margin: 0;
-    font-size: clamp(5px, 2vw + 1rem, 2vw + 2rem);
-    flex-wrap: balance;
-    text-align: center;
+h2 {
+  margin: 0;
+  margin-bottom: 0 !important;
+  //font-size: clamp(5px, 2vw + 1rem, 2vw + 2rem);
+  flex-wrap: balance;
+  text-align: center;
 }
 
-.sidebar{
-    background-color: var(--aventurine) !important;
-    width: max-content !important;
-    z-index: 3;
-    position: relative;
+.sidebar {
+  background-color: var(--aventurine) !important;
+  width: max-content !important;
+  z-index: 3;
+  position: relative;
 }
 
 button {
-    background-color: var(--dark-blue); 
-    color: white;   
-    border: 4px solid var(--dark-blue);   /* Thickness, style, color */
-    border-radius: 6px; /* Rounds the corners */
-    font-family: 'Lovelace Script', sans-serif;
-    font-size: clamp(1vw, 1vw + 1rem, 1vw + 1rem);
-    align-items: center;
-    display: flex;
-    justify-content: center;
+  background-color: var(--dark-blue);
+  color: white;
+  border: 4px solid var(--dark-blue); /* Thickness, style, color */
+  border-radius: 6px; /* Rounds the corners */
+  font-family: 'Lovelace Script', sans-serif;
+  //font-size: clamp(1vw, 1vw + 1rem, 1vw + 1rem);
+  align-items: center;
+  display: flex;
+  justify-content: center;
 }
 
-button:hover{
-    background-color: color-mix(in srgb, var(--dark-blue), black 15%);
-    border: 4px solid color-mix(in srgb, var(--dark-blue), black 15%);
+
+.btn-primary:hover {
+  background-color: color-mix(in srgb, var(--dark-blue), black 15%) !important;
+  border: 4px solid color-mix(in srgb, var(--dark-blue), black 15%) !important;
+}
+
+.btn-primary{
+  background-color: var(--dark-blue) !important;
+  color: white !important;
+  border: 4px solid var(--dark-blue) !important; /* Thickness, style, color */
+  font-family: 'Lovelace Script', sans-serif;
+  //font-size: clamp(1vw, 1vw + 1rem, 1vw + 1rem) !important;
 }
 
 a {
-    text-decoration: none;
-    font-size: clamp(.5vw, .5vw + 1rem, .5vw + 1rem);
+  text-decoration: none;
+  //font-size: clamp(0.5vw, 0.5vw + 1rem, 0.5vw + 1rem);
 }
 
-.main-container{
-    flex-grow: 1;
-    line-height: 1.5;
-    width: 100%;
-    box-sizing: border-box;
-    padding: 0px;
-    overflow-x: hidden;   
-    z-index: 1;
+.main-container {
+  flex-grow: 1;
+  line-height: 1.5;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0px;
+  overflow-x: hidden;
+  z-index: 1;
 }
 
 .sub-container {
-    display: flex; flex-direction: column; align-items: center; height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+
+.bottom-container{
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  gap: 10px;
+  padding: 10px; 
+  justify-content: center; 
+  height: 50%;
+}
+
+.form-control{
+  background-color: var(--aventurine) !important;
+  width: clamp(200px, 25vw, 400px) !important;
+  //font-size: clamp(1vw, 1vw + 1rem, 1vw + 1rem) !important;
+  padding: 0 !important;
 
 }
+
+.form-control:focus{
+  border-color: var(--copper-skillet) !important; /* Changes the border color */
+  box-shadow: 0 0 8px var(--copper-skillet) !important; /* Creates the colored glow effect */
+  outline: 0 none !important; /* Removes the default browser outline */
+}
+
+.form-control::placeholder {
+  color: lightgray !important;
+  opacity: .8 !important; /* Firefox overrides this by default, so explicitly reset it */
+}
+
+/* Ensure the button contains the ripple */
+button[appRipple] {
+  position: relative;
+  overflow: hidden;
+  /* Optional: Prevents text selection on rapid clicks */
+  user-select: none; 
+}
+
+/* The expanding ripple circle */
+.ripple-effect {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4); /* Change color/opacity here */
+  transform: scale(0);
+  animation: ripple-animation 0.6s linear;
+  pointer-events: none;
+}
+
+@keyframes ripple-animation {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+label{
+  font-size: clamp(1vw, 1vw + 1rem, 1vw + 1rem) !important;
+}
+
+.form-check-input:checked[type=radio]{
+  border: 4px solid var(--aventurine) !important;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://w3.org' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23000000' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='m6 10 3 3 6-6'/%3e%3c/svg%3e");
+
+}
+.form-check-input:focus{
+  box-shadow: 0 0 8px var(--copper-skillet) !important; /* Creates the colored glow effect */
+}
+
+
+$form-check-input-checked-bg-color: var(--copper-skillet);
+$form-check-input-checked-border-color: var(--aventurine);   
+
+.card{
+  background-color: var(--aventurine) !important;
+  margin: 5px;
+}
+
+/* Importing Bootstrap SCSS file. */
+@import 'bootstrap/scss/bootstrap';

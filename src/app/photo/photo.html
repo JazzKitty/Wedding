@@ -1,1 +1,7 @@
-<p>photo works!</p>
+<div style="height: 100%; width: 100%; display: flex; flex-direction: column; align-items: center; gap: 20px;">
+
+@for (file of fileList; track $index) {
+    <img [src]="'https://lh3.googleusercontent.com/d/' + file.id" alt="Google Drive Image Demo"  style="  height: 80vh; aspect-ratio:  1/1;
+  object-fit: cover;  " />
+}
+</div>
