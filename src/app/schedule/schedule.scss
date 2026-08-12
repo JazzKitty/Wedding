@@ -1,0 +1,12 @@
+.box{
+    background-color: var(--aventurine);
+    margin: 10px;
+}
+
+.p-timeline-event{
+    display: flex;
+}
+
+.p-timeline-event .p-timeline-event-opposite{
+    align-self: center !important;
+}

@@ -47,6 +47,16 @@
         </h2>
 
     </a>
+    <a routerLink="schedule" class="text-decoration-none">
+        <h2 style="display: flex; align-items: baseline;">
+            <fa-icon class="fa-x" [icon]="faCalender"></fa-icon>
+            @if (expanded) {
+            <span >
+                Schedule
+            </span>
+            }
+        </h2>
+    </a>
     <a routerLink="faq" style="margin-top: auto;" class="text-decoration-none">
         <h2 style="display: flex; align-items: baseline;">
             <fa-icon class="fa-x" [icon]="faQuestion"></fa-icon>

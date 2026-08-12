@@ -215,6 +215,23 @@ $form-check-input-checked-border-color: var(--aventurine);
 .card{
   background-color: var(--aventurine) !important;
   margin: 5px;
+  min-width: 18rem; 
+  width: min-content; 
+  border: 2px solid gray; 
+  border-radius: 10px;
+}
+
+.p-timeline-event .p-timeline-event-opposite{
+    align-self: center !important;
+}
+
+.p-timeline-event .p-timeline-event-content {
+  background-color: var(--aventurine) !important;
+  margin: 5px;
+  min-width: 18rem; 
+  width: min-content; 
+  border: 2px solid gray; 
+  border-radius: 10px;
 }
 
 /* Importing Bootstrap SCSS file. */

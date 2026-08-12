@@ -1,11 +1,12 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faBars, faI } from '@fortawesome/free-solid-svg-icons';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { faHome } from '@fortawesome/free-solid-svg-icons';
 import { faQuestion } from '@fortawesome/free-solid-svg-icons';
 import { faImage } from '@fortawesome/free-solid-svg-icons';
 import { faGift } from '@fortawesome/free-solid-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { faCalendar } from '@fortawesome/free-solid-svg-icons';
 import { RouterLink } from "@angular/router";
 
 @Component({
@@ -21,6 +22,7 @@ export class Side {
     faImage = faImage; 
     faGift = faGift; 
     faEnvelope = faEnvelope;
+    faCalender = faCalendar;
     
     @Input() expanded: boolean = false;
     @Output() expandedChange: EventEmitter<boolean> = new EventEmitter<boolean>();
