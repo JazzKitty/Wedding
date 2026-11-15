@@ -1,0 +1,11 @@
+  <div class="image-row">
+    @if(leftBannerID.length > 0 ){
+      <img class="side-banner" [src]="'https://lh3.googleusercontent.com/d/' + leftBannerID" alt="Description of photo" />
+    }
+    @if(bannerID.length > 0){
+      <img class="main-banner" [src]="'https://lh3.googleusercontent.com/d/' + bannerID" alt="Description of photo"  />
+    }
+    @if(rightBannerID.length > 0){
+      <img class="side-banner" [src]="'https://lh3.googleusercontent.com/d/' + rightBannerID" alt="Description of photo" />
+    }
+  </div>

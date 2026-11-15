@@ -1,29 +1,22 @@
-import { ChangeDetectorRef, Component, inject } from '@angular/core';
+import { ChangeDetectorRef, Component, inject, OnInit } from '@angular/core';
 import { AppService } from '../app.service';
+import { PhotoService } from '../photo.service';
 
 @Component({
-    selector: 'app-photo',
-    imports: [],
-    templateUrl: './photo.html',
-    styleUrl: './photo.scss',
+  selector: 'app-photo',
+  imports: [],
+  templateUrl: './photo.html',
+  styleUrl: './photo.scss',
 })
-export class Photo {
-    private appService = inject(AppService);
-    private cdr = inject(ChangeDetectorRef);
+export class Photo implements OnInit {
+  private photoService = inject(PhotoService);
+  private cdr = inject(ChangeDetectorRef);
 
-    fileList: any[] = [];
+  fileList: any[] = [];
 
-    ngOnInit() {
-        this.appService.getPublicFolderFiles().subscribe({
-            next: (response) => {
-                // Iterate through files returned by Google Drive API
-                this.fileList = response.files;
-                this.fileList.forEach(file => {
-                    console.log('File Name:', file.name, 'ID:', file.id);
-                });
-                this.cdr.detectChanges()
-            },
-            error: (err) => console.error('Error fetching files', err)
-        });
-    }
+  ngOnInit() {
+    this.photoService.fileListSub.subscribe(res=>{
+      this.fileList = res;
+    })
+  }
 }

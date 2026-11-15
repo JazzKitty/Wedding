@@ -1,6 +1,6 @@
-export class GuestDTO{
-    public idGuest: number = NaN;
-    public name: string = "";
-    public allergy: string = "";
-    public attending: boolean = false;
+export class GuestDTO {
+  public idGuest = NaN;
+  public name = '';
+  public allergy = '';
+  public attending = false;
 }

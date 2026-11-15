@@ -1,16 +1,17 @@
-import { Directive, HostListener, ElementRef, Renderer2 } from '@angular/core';
+import { Directive, HostListener, ElementRef, Renderer2, inject } from '@angular/core';
 
 @Directive({
   selector: '[appRipple]',
-  standalone: true // Remove if using NgModule
+  standalone: true, // Remove if using NgModule
 })
 export class RippleDirective {
-  constructor(private el: ElementRef, private renderer: Renderer2) {}
+  private el = inject(ElementRef);
+  private renderer = inject(Renderer2);
 
   @HostListener('click', ['$event'])
   onClick(event: MouseEvent) {
     const button = this.el.nativeElement;
-    
+
     // Remove any existing ripples
     const existingRipple = button.querySelector('.ripple-effect');
     if (existingRipple) {

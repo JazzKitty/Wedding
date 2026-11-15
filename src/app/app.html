@@ -1,12 +1,8 @@
 <main class="main">
+  <app-side [(expanded)]="expanded" (expandedChange)="onExpanded()" class="sidebar nav-container"> </app-side>
 
-    <side [(expanded)]="expanded" (expandedChange)="onExpanded()" class="sidebar">
-
-    </side>
-
-    <div class="main-container">
-        <router-outlet></router-outlet>
-    </div>
-
-
+  <div class="main-container">
+    <router-outlet></router-outlet>
+  </div>
+  <app-footer class="footer nav-container"></app-footer>
 </main>

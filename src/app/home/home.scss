@@ -1,0 +1,29 @@
+@media (aspect-ratio < 1 / 1) {
+  .side-banner {
+    display: none;
+  }
+}
+
+.parent-container {
+  container-type: size; /* Required to track height */
+  min-height: 50vh;
+  width: 100%; 
+}
+
+.image-row {
+  display: flex;
+  gap: 0px;
+  width: 100%;
+}
+
+.side-banner{
+  flex: 1 1 0;       /* Grow and shrink equally from a 0 basis */
+  min-width: 0;      /* Crucial: overrides default min-width: auto so images can shrink */
+  object-fit: cover; /* Crops the image instead of squishing it */
+}
+
+.main-banner {
+  flex: 2 1 0;       /* Grow and shrink equally from a 0 basis */
+  min-width: 0;      /* Crucial: overrides default min-width: auto so images can shrink */
+  object-fit: cover; /* Crops the image instead of squishing it */
+}

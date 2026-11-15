@@ -1,70 +1,55 @@
-<div style="height: 100%; width: 100%; display: flex; flex-direction: column;">
-    <button (click)="onExpanded()">
-        <h2 style="display: flex; align-items: baseline;">
-            <fa-icon class="fa-x" [icon]="faHamburger"></fa-icon>
-        </h2>
-    </button>
-    <a routerLink="home" class="text-decoration-none">
-        <h2 style="display: flex; align-items: baseline;">
-            <fa-icon class="fa-x" [icon]="faHome"></fa-icon>
-            @if (expanded) {
-            <span>
-                Home
-            </span>
-            }
-        </h2>
-
-    </a>
-    <a routerLink="rsvp" class="text-decoration-none">
-        <h2 style="display: flex; align-items: baseline;">
-            <fa-icon class="fa-x" [icon]="faEnvelope"></fa-icon>
-            @if (expanded) {
-            <span>
-                RSVP
-            </span>
-            }
-        </h2>
-    </a>
-    <a routerLink="photo" class="text-decoration-none">
-        <h2 style="display: flex; align-items: baseline;">
-            <fa-icon class="fa-x" [icon]="faImage"></fa-icon>
-            @if (expanded) {
-            <span>
-                Photos
-            </span>
-            }
-        </h2>
-
-    </a>
-    <a routerLink="registry" class="text-decoration-none">
-        <h2 style="display: flex; align-items: baseline;">
-            <fa-icon class="fa-x" [icon]="faGift"></fa-icon>
-            @if (expanded) {
-            <span >
-                Registry
-            </span>
-            }
-        </h2>
-
-    </a>
-    <a routerLink="schedule" class="text-decoration-none">
-        <h2 style="display: flex; align-items: baseline;">
-            <fa-icon class="fa-x" [icon]="faCalender"></fa-icon>
-            @if (expanded) {
-            <span >
-                Schedule
-            </span>
-            }
-        </h2>
-    </a>
-    <a routerLink="faq" style="margin-top: auto;" class="text-decoration-none">
-        <h2 style="display: flex; align-items: baseline;">
-            <fa-icon class="fa-x" [icon]="faQuestion"></fa-icon>
-            @if (expanded) {
-            <span>
-                FAQ
-            </span>
-            }
-        </h2>
-    </a>
+<div style="height: 100%; width: 100%; display: flex; flex-direction: column">
+  <button (click)="onExpanded()">
+    <h2 style="display: flex; align-items: baseline">
+      <fa-icon class="fa-x" [icon]="faHamburger"></fa-icon>
+    </h2>
+  </button>
+  <a routerLink="home" class="text-decoration-none">
+    <h2 style="display: flex; align-items: baseline">
+      <fa-icon class="fa-x" [icon]="faHome"></fa-icon>
+      @if (expanded) {
+        <span> Home </span>
+      }
+    </h2>
+  </a>
+  <a routerLink="rsvp" class="text-decoration-none">
+    <h2 style="display: flex; align-items: baseline">
+      <fa-icon class="fa-x" [icon]="faEnvelope"></fa-icon>
+      @if (expanded) {
+        <span> RSVP </span>
+      }
+    </h2>
+  </a>
+  <a routerLink="photo" class="text-decoration-none">
+    <h2 style="display: flex; align-items: baseline">
+      <fa-icon class="fa-x" [icon]="faImage"></fa-icon>
+      @if (expanded) {
+        <span> Photos </span>
+      }
+    </h2>
+  </a>
+  <a routerLink="registry" class="text-decoration-none">
+    <h2 style="display: flex; align-items: baseline">
+      <fa-icon class="fa-x" [icon]="faGift"></fa-icon>
+      @if (expanded) {
+        <span> Registry </span>
+      }
+    </h2>
+  </a>
+  <a routerLink="schedule" class="text-decoration-none">
+    <h2 style="display: flex; align-items: baseline">
+      <fa-icon class="fa-x" [icon]="faCalender"></fa-icon>
+      @if (expanded) {
+        <span> Schedule </span>
+      }
+    </h2>
+  </a>
+  <a routerLink="faq" style="margin-top: auto" class="text-decoration-none">
+    <h2 style="display: flex; align-items: baseline">
+      <fa-icon class="fa-x" [icon]="faQuestion"></fa-icon>
+      @if (expanded) {
+        <span> FAQs </span>
+      }
+    </h2>
+  </a>
 </div>

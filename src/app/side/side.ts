@@ -7,29 +7,28 @@ import { faImage } from '@fortawesome/free-solid-svg-icons';
 import { faGift } from '@fortawesome/free-solid-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { faCalendar } from '@fortawesome/free-solid-svg-icons';
-import { RouterLink } from "@angular/router";
+import { RouterLink } from '@angular/router';
 
 @Component({
-  selector: 'side',
+  selector: 'app-side',
   imports: [FontAwesomeModule, RouterLink],
   templateUrl: './side.html',
   styleUrl: './side.scss',
 })
 export class Side {
-    faHamburger = faBars; 
-    faHome = faHome;
-    faQuestion = faQuestion;
-    faImage = faImage; 
-    faGift = faGift; 
-    faEnvelope = faEnvelope;
-    faCalender = faCalendar;
-    
-    @Input() expanded: boolean = false;
-    @Output() expandedChange: EventEmitter<boolean> = new EventEmitter<boolean>();
+  faHamburger = faBars;
+  faHome = faHome;
+  faQuestion = faQuestion;
+  faImage = faImage;
+  faGift = faGift;
+  faEnvelope = faEnvelope;
+  faCalender = faCalendar;
 
-    onExpanded(){
-        this.expanded = !this.expanded;
-        this.expandedChange.emit(this.expanded);
-    }
+  @Input() expanded = false;
+  @Output() expandedChange: EventEmitter<boolean> = new EventEmitter<boolean>();
 
+  onExpanded() {
+    this.expanded = !this.expanded;
+    this.expandedChange.emit(this.expanded);
+  }
 }

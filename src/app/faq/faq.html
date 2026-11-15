@@ -1,1 +1,33 @@
-<p>faq works!</p>
+<div class="sub-container">
+  <h1 class="subtitle">FAQs</h1>
+  <div
+    style="
+      width: 100%;
+      display: grid;
+      align-items: center;
+      gap: 20px;
+      padding-bottom: 20px;
+      overflow-y: auto;
+      flex-grow: 1;
+    ">
+    @for (qa of QAs; track $index) {
+      <div style="display: grid; grid-template-columns: 1fr 2fr; align-items: center">
+        <h2 style="text-align: right; margin-right: 20px; font-weight: bolder; ">
+          {{ qa.question }}
+        </h2>
+
+        <h3
+          class="card"
+          style="
+            max-width: 100%;
+            min-width: fit-content;
+            display: block;
+            padding: 10px;
+            height: 100%;
+            align-content: center;
+          "
+          [innerHTML]="qa.answer"></h3>
+      </div>
+    }
+  </div>
+</div>

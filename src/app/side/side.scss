@@ -1,12 +1,14 @@
-button, a{
-    background-color: transparent; 
-    border: none;
-    color: #FFFFFF;
-    padding: 10px;
-    display: flex;
-    justify-content: start;
+button,
+a {
+  background-color: transparent;
+  border: none;
+  color: #ffffff;
+  padding: 10px;
+  display: flex;
+  justify-content: start;
 }
 
-button:hover, a:hover {
-    color: #AAAAAA;
+button:hover,
+a:hover {
+  color: #aaaaaa;
 }

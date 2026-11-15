@@ -1,12 +1,22 @@
-.box{
-    background-color: var(--aventurine);
-    margin: 10px;
+.box {
+  background-color: var(--aventurine);
+  margin: 10px;
 }
 
-.p-timeline-event{
-    display: flex;
+.p-timeline-event {
+  display: flex;
 }
 
-.p-timeline-event .p-timeline-event-opposite{
-    align-self: center !important;
+.p-timeline-event .p-timeline-event-opposite {
+  align-self: center !important;
+}
+
+.even-card {
+  margin-left: auto;
+  margin-right: 5;
+  order: 1;
+}
+
+.odd-card {
+  order: 3;
 }

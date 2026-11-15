@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @use 'palette' as *;
+@import 'bootstrap/scss/bootstrap';
 
 .primary-button {
   color: var(--color-blue-light);
@@ -7,6 +8,7 @@
 }
 
 .main {
+  container-type: size;
   background-color: var(--grape-juice);
   padding: 0;
   margin: 0;
@@ -14,16 +16,6 @@
   width: 100%;
   display: flex;
   flex-direction: row;
-  //background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url('../public/filigree.png');
-
-  /* Force the image to repeat both horizontally and vertically */
-  //background-repeat: repeat;
-
-  /* (Optional) Adjust the size of the repeating tile */
-  //background-size: 30vh 30vh;
-
-  /* (Optional) Control exactly where the pattern starts */
-  //background-position: top left;
   z-index: -1;
 }
 .main::before {
@@ -52,6 +44,7 @@ body {
   color: #ffffff;
   --bs-body-font-family: 'Lovelace Script', sans-serif;
   --bs-body-color: #ffffff; /* Changes global body text */
+  line-height: 1.5 !important;
 }
 
 /* Force the Angular root component to take up all available space */
@@ -86,11 +79,13 @@ h2 {
   text-align: center;
 }
 
-.sidebar {
+.nav-container {
   background-color: var(--aventurine) !important;
-  width: max-content !important;
   z-index: 3;
   position: relative;
+}
+.sidebar{
+    width: max-content !important;
 }
 
 button {
@@ -105,13 +100,12 @@ button {
   justify-content: center;
 }
 
-
 .btn-primary:hover {
   background-color: color-mix(in srgb, var(--dark-blue), black 15%) !important;
   border: 4px solid color-mix(in srgb, var(--dark-blue), black 15%) !important;
 }
 
-.btn-primary{
+.btn-primary {
   background-color: var(--dark-blue) !important;
   color: white !important;
   border: 4px solid var(--dark-blue) !important; /* Thickness, style, color */
@@ -126,7 +120,7 @@ a {
 
 .main-container {
   flex-grow: 1;
-  line-height: 1.5;
+  line-height: 1.5 !important;
   width: 100%;
   box-sizing: border-box;
   padding: 0px;
@@ -139,27 +133,28 @@ a {
   flex-direction: column;
   align-items: center;
   height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
-.bottom-container{
-  display: flex; 
-  flex-direction: column; 
-  align-items: center; 
+.bottom-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   gap: 10px;
-  padding: 10px; 
-  justify-content: center; 
-  height: 50%;
+  padding: 10px;
+  justify-content: center;
+  flex-grow: 1;
 }
 
-.form-control{
+.form-control {
   background-color: var(--aventurine) !important;
   width: clamp(200px, 25vw, 400px) !important;
   //font-size: clamp(1vw, 1vw + 1rem, 1vw + 1rem) !important;
   padding: 0 !important;
-
 }
 
-.form-control:focus{
+.form-control:focus {
   border-color: var(--copper-skillet) !important; /* Changes the border color */
   box-shadow: 0 0 8px var(--copper-skillet) !important; /* Creates the colored glow effect */
   outline: 0 none !important; /* Removes the default browser outline */
@@ -167,7 +162,7 @@ a {
 
 .form-control::placeholder {
   color: lightgray !important;
-  opacity: .8 !important; /* Firefox overrides this by default, so explicitly reset it */
+  opacity: 0.8 !important; /* Firefox overrides this by default, so explicitly reset it */
 }
 
 /* Ensure the button contains the ripple */
@@ -175,7 +170,7 @@ button[appRipple] {
   position: relative;
   overflow: hidden;
   /* Optional: Prevents text selection on rapid clicks */
-  user-select: none; 
+  user-select: none;
 }
 
 /* The expanding ripple circle */
@@ -195,44 +190,77 @@ button[appRipple] {
   }
 }
 
-label{
+label {
   font-size: clamp(1vw, 1vw + 1rem, 1vw + 1rem) !important;
 }
 
-.form-check-input:checked[type=radio]{
+.form-check-input:checked[type='radio'] {
   border: 4px solid var(--aventurine) !important;
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://w3.org' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23000000' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='m6 10 3 3 6-6'/%3e%3c/svg%3e");
-
 }
-.form-check-input:focus{
+.form-check-input:focus {
   box-shadow: 0 0 8px var(--copper-skillet) !important; /* Creates the colored glow effect */
 }
 
-
 $form-check-input-checked-bg-color: var(--copper-skillet);
-$form-check-input-checked-border-color: var(--aventurine);   
+$form-check-input-checked-border-color: var(--aventurine);
 
-.card{
+.card {
   background-color: var(--aventurine) !important;
   margin: 5px;
-  min-width: 18rem; 
-  width: min-content; 
-  border: 2px solid gray; 
+  min-width: 18rem;
+  width: min-content;
+  border: 2px solid gray;
   border-radius: 10px;
 }
 
-.p-timeline-event .p-timeline-event-opposite{
-    align-self: center !important;
+.p-timeline-event .p-timeline-event-opposite {
+  align-self: center !important;
 }
 
 .p-timeline-event .p-timeline-event-content {
   background-color: var(--aventurine) !important;
   margin: 5px;
-  min-width: 18rem; 
-  width: min-content; 
-  border: 2px solid gray; 
+  min-width: 18rem;
+  width: min-content;
+  border: 2px solid gray;
   border-radius: 10px;
 }
 
+h6,
+.h6,
+h5,
+.h5,
+h4,
+.h4,
+h3,
+.h3,
+h2,
+.h2,
+h1,
+.h1 {
+  line-height: 1.5 !important;
+}
+
+.subtitle {
+  font-size: clamp(1.5rem, 5vw + 1rem, 5rem);
+  flex-shrink: 1;
+}
+
+.footer{
+  display: none;
+}
+@media (aspect-ratio < 1 / 1) {
+
+  .main{
+    flex-direction: column !important;
+  }
+  .footer{
+    display: unset;
+  }
+  .sidebar{
+    display: none;
+  }
+}
+
 /* Importing Bootstrap SCSS file. */
-@import 'bootstrap/scss/bootstrap';

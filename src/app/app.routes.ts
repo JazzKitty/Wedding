@@ -7,14 +7,12 @@ import { Faq } from './faq/faq';
 import { Schedule } from './schedule/schedule';
 
 export const routes: Routes = [
-    {path: 'home', component: Home},
-    {path: 'photo', component: Photo},
-    {path: 'rsvp', component: Rsvp},
-    {path: 'registry', component: Registry},
-    {path: 'faq', component: Faq},
-    {path: 'schedule', component: Schedule},
+  { path: 'home', component: Home },
+  { path: 'photo', component: Photo },
+  { path: 'rsvp', component: Rsvp },
+  { path: 'registry', component: Registry },
+  { path: 'faq', component: Faq },
+  { path: 'schedule', component: Schedule },
 
-    
-    {path: '', redirectTo: 'home', pathMatch: 'full'},
-    
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
 ];

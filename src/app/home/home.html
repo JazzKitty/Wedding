@@ -1,23 +1,25 @@
 <div class="sub-container">
-    <img src="/banner.jpeg" alt="Description of photo" style="height: 50vh;">
+  <!-- <div class="image-row">
+    <img class="side-banner" src="/left_banner.png" alt="Description of photo" />
+    <img class="main-banner" src="/banner.jpg" alt="Description of photo"  />
+    <img class="side-banner" src="/right_banner.png" alt="Description of photo" />
+  </div> -->
+  <app-banner style="width: 100%;">
 
-    <div class="bottom-container">
-        <h1>Sierra Rose & Patrick Joseph</h1>
-        <h1>Pearson Stauffer</h1>
-        <h2>May 21st, 2027 | Salt Lake City, UT | Louland Falls</h2>
-        <div style="display: flex; gap: 5px; flex-wrap: wrap; justify-content: center;">
-            <button class="btn btn-primary" routerLink="/rsvp" style="display: flex;   justify-content: center; ">
-                <fa-icon class="fa-x" [icon]="faEnvelope"></fa-icon>
-                <span>
-                    RSVP
-                </span>
-            </button>
-            <button class="btn btn-primary" (click)="openDirections()" style="display: flex; justify-content: center; ">
-                <fa-icon class="fa-x" [icon]="faTurnRight"></fa-icon>
-                <span>
-                    Get Directions
-                </span>
-            </button>
-        </div>
+  </app-banner>
+  <div class="bottom-container">
+    <h1>Sierra Rose & Patrick Joseph</h1>
+    <h1>Pearson Stauffer</h1>
+    <h2>May 21st, 2027 | Salt Lake City, UT | Louland Falls</h2>
+    <div style="display: flex; gap: 5px; flex-wrap: wrap; justify-content: center">
+      <button class="btn btn-primary" routerLink="/rsvp" style="display: flex; justify-content: center">
+        <fa-icon class="fa-x" [icon]="faEnvelope"></fa-icon>
+        <span> RSVP </span>
+      </button>
+      <button class="btn btn-primary" (click)="openDirections()" style="display: flex; justify-content: center">
+        <fa-icon class="fa-x" [icon]="faTurnRight"></fa-icon>
+        <span> Get Directions </span>
+      </button>
     </div>
+  </div>
 </div>
